@@ -60,14 +60,18 @@ export default function Home() {
     </main>
   )
 }
+type FeatureCardProps = {
+  icon: React.ReactNode; // JSXに描画可能な要素
+  title: string;         // 文字列
+  description: string;   // 文字列
+};
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur-sm">
-      <div className="text-3xl mb-2">{icon}</div>
-      <h2 className="text-xl font-semibold mb-2 text-white">{title}</h2>
-      <p className="text-blue-100">{description}</p>
-    </div>
-  )
+      <div className="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur-sm">
+        <div className="text-3xl mb-2">{icon}</div>
+        <h2 className="text-xl font-semibold mb-2 text-white">{title}</h2>
+        <p className="text-blue-100">{description}</p>
+      </div>
+  );
 }
-

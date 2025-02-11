@@ -1,101 +1,73 @@
-import Image from "next/image";
+import { Noto_Sans_JP } from "next/font/google"
+
+const notoSansJP = Noto_Sans_JP({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+})
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+    <main
+      className={`min-h-screen bg-gradient-to-br from-orange-400 via-orange-300 to-blue-400 flex items-center justify-center p-4 ${notoSansJP.className}`}
+    >
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg max-w-4xl w-full">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600 mb-4">
+            Cloudflare Pages
+          </h1>
+          <p className="text-xl md:text-2xl text-white">高速で簡単にウェブサイトを構築・デプロイ</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <FeatureCard
+            icon="🚀"
+            title="圧倒的なパフォーマンス"
+            description="Cloudflareのグローバルネットワークで、比類ない速度と信頼性を実現"
+          />
+          <FeatureCard
+            icon="🛠️"
+            title="簡単デプロイ"
+            description="Gitにプッシュするだけで、自動ビルドとデプロイを実行"
+          />
+          <FeatureCard icon="🌐" title="グローバルCDN" description="世界200以上のデータセンターからコンテンツを配信" />
+          <FeatureCard
+            icon="🔒"
+            title="セキュリティ対策済み"
+            description="Cloudflareのエンタープライズグレードのセキュリティ機能を標準装備"
+          />
+        </div>
+        <div className="bg-blue-900 bg-opacity-20 rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">技術的なハイライト</h2>
+          <ul className="list-disc list-inside text-blue-100 space-y-2">
+            <li>静的サイトとフルスタックアプリケーションの両方をサポート</li>
+            <li>Cloudflare Workersによるサーバーレス関数の統合</li>
+            <li>ワンクリックでSSLを設定できるカスタムドメイン</li>
+            <li>即時ロールバックとプレビューデプロイメント</li>
+            <li>チーム向けコラボレーションツール</li>
+          </ul>
+        </div>
+        <div className="text-center">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.cloudflare.com/ja-jp/"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-blue-600 text-white font-semibold rounded-full hover:from-orange-600 hover:to-blue-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Cloudflare Pagesを試す
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }
+
+function FeatureCard({ icon, title, description }) {
+  return (
+    <div className="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur-sm">
+      <div className="text-3xl mb-2">{icon}</div>
+      <h2 className="text-xl font-semibold mb-2 text-white">{title}</h2>
+      <p className="text-blue-100">{description}</p>
+    </div>
+  )
+}
+

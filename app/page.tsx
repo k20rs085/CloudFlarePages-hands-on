@@ -14,7 +14,7 @@ export default function Home() {
       <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg max-w-4xl w-full">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600 mb-4">
-            Cloudflare Pages
+            ここ変えたぞ！
           </h1>
           <p className="text-xl md:text-2xl text-white">高速で簡単にウェブサイトを構築・デプロイ</p>
         </div>
